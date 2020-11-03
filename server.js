@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/csv", (req,res)=>{
-  res.status(204).send(js(req.body.json))
+  res.status(204).send()
 })
 app.get("/csv", (req,res)=>{
   res.status(204).send()
