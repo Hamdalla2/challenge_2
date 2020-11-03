@@ -1,5 +1,5 @@
 const express = require('express');
-const convert = require('./client/app.js');
+const js = require('./app.js');
 
 let app = express();
 
@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post("/csv", (req,res)=>{
-  convert(req.body)
-  res.redirect("/")
+  js.sender(JSON.parse(req.body.json))
+  res.status(204).send()
 })
 
 app.listen(3000,()=>{console.log("Server is running")});

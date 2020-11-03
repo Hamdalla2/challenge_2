@@ -2,12 +2,12 @@
 <html>
 <head>
 <title>CSV converter</title>
-<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="stylesheet" type="text/css" href="./css.css">
 </head>
 <body>
     <form action="/csv", method="POST">
         <p style="color:yellow">Insert The JSON (Object) Containing The Information To Convert It To CSV (Comma Separated Values)</p>
-        <textarea name="json" placeholder='example
+        <textarea id='text1' name="json" placeholder='example
         {
             "firstName": "Joshie",
             "lastName": "Wyattson",
@@ -56,10 +56,10 @@
           ]
         }'></textarea>
         <br>
-        <button type="submit">Convert & Submit</button>
+        <button type="submit" onclick="convert(this)">Convert & Submit</button>
     </form>
     <br>
-    <textarea name="csv" placeholder="Result 
+    <textarea id="text2" name="csv" placeholder="Result 
         firstName,lastName,county,city,role,sales
         Joshie,Wyattson,San Mateo,San Mateo,Broker,1000000
         Beth Jr.,Johnson,San Mateo,Pacifica,Manager,2900000
@@ -67,6 +67,6 @@
         Allen,Price,San Mateo,Burlingame,Sales Person,2500000
         Beth,Johnson,San Francisco,San Francisco,Broker/Sales Person,7500000
     " readonly></textarea>
-<script src="app.js"></script>
+<script src="../app.js"></script>
 </body>
 </html>
