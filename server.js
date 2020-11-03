@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/csv", (req,res)=>{
   convert(req.body)
-  res.end()
+  res.redirect("/")
 })
 
 app.listen(3000,()=>{console.log("Server is running")});
