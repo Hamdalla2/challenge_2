@@ -29,7 +29,25 @@ button{
     color:yellow;
     background-color: green;
     border-radius: 12px;
+    border-color: green;
     height:30px;
     width:200px;
     outline: none;
+}
+input[type='file']{
+    color:yellow;
+    background-color: green;
+    border-radius: 12px;
+    height:30px;
+    width:200px;
+    outline: none;
+	opacity: 0;
+	position: absolute;
+}
+#up{
+    color:yellow;
+    background-color: green;
+    border-radius: 12px;
+    height:30px;
+    width:200px;
 }
