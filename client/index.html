@@ -10,10 +10,10 @@
 </head>
 <body>
     <p style="color:yellow">Convert JSON to CSV</p>
-    <form action="/csv" method="get">
-        <input type="file"><p id='up'>Upload File</p> 
-     </form>
-     <br>
+    <form action="/csv", method="post">
+    <input id='file' type="file" onchange="up(this)"><p id='up'>Upload File</p> 
+    </form>
+    <br>
     <form action="/csv", method="post">
         <textarea id='text1' name="json" placeholder='example
         {
@@ -77,8 +77,9 @@
     " readonly></textarea>
     <br>
     <form action="/csv" method="get">
-        <button type="submit">Download Result</button>
-     </form>
+        <button type="submit" href="app.js" download>Download Result</button>
+      </form>
 <script src="app.js"></script>
+<script src="up.js"></script>
 </body>
 </html>
