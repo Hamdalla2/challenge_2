@@ -1,2 +1,72 @@
-
-
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSV converter</title>
+<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <form action="/csv", method="POST">
+        <p style="color:yellow">Insert The JSON (Object) Containing The Information To Convert It To CSV (Comma Separated Values)</p>
+        <textarea name="json" placeholder='example
+        {
+            "firstName": "Joshie",
+            "lastName": "Wyattson",
+            "county": "San Mateo",
+            "city": "San Mateo",
+            "role": "Broker",
+            "sales": 1000000,
+            "children": [
+            {
+              "firstName": "Beth Jr.",
+              "lastName": "Johnson",
+              "county": "San Mateo",
+              "city": "Pacifica",
+              "role": "Manager",
+              "sales": 2900000,
+              "children": [
+                {
+                  "firstName": "Smitty",
+                  "lastName": "Won",
+                  "county": "San Mateo",
+                  "city": "Redwood City",
+                  "role": "Sales Person",
+                  "sales": 4800000,
+                  "children": []
+                },
+                {
+                  "firstName": "Allen",
+                  "lastName": "Price",
+                  "county": "San Mateo",
+                  "city": "Burlingame",
+                  "role": "Sales Person",
+                  "sales": 2500000,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "firstName": "Beth",
+              "lastName": "Johnson",
+              "county": "San Francisco",
+              "city": "San Francisco",
+              "role": "Broker/Sales Person",
+              "sales": 7500000,
+              "children": []
+            }
+          ]
+        }'></textarea>
+        <br>
+        <button type="submit">Convert & Submit</button>
+    </form>
+    <br>
+    <textarea name="csv" placeholder="Result 
+        firstName,lastName,county,city,role,sales
+        Joshie,Wyattson,San Mateo,San Mateo,Broker,1000000
+        Beth Jr.,Johnson,San Mateo,Pacifica,Manager,2900000
+        Smitty,Won,San Mateo,Redwood City,Sales Person,4800000
+        Allen,Price,San Mateo,Burlingame,Sales Person,2500000
+        Beth,Johnson,San Francisco,San Francisco,Broker/Sales Person,7500000
+    " readonly></textarea>
+<script src="app.js"></script>
+</body>
+</html>

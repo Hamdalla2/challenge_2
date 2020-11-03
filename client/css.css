@@ -1,0 +1,35 @@
+body {
+    background-image: url('paper.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display:flex;
+    flex-flow: column;
+    justify-content:center;
+    align-items:center;
+}
+body *{    
+    display:flex;
+    flex-flow: column;
+    justify-content:center;
+    align-items:center;
+}
+textarea{
+    color:yellow;
+    background-color: green;
+    border-radius: 12px;
+    height:100px;
+    width:800px;
+    outline: none;
+}
+textarea::placeholder{
+    color:cyan;
+}
+button{
+    color:yellow;
+    background-color: green;
+    border-radius: 12px;
+    height:30px;
+    width:200px;
+    outline: none;
+}
