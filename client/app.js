@@ -1,4 +1,6 @@
-let convert=()=>{
+var one=""
+let convert=(e)=>{
+    e.preventDefault();
 let t=""
 let x=document.getElementById('text1').value
 let arr1=Object.keys(JSON.parse(x))
@@ -22,5 +24,30 @@ if(arr2[arr2.length-1].length>0){
 loop(JSON.parse(x))
 
 document.getElementById('text2').value=t
+
+one=t
+
+save(t)
 }
 
+function save(t){
+$.ajax({
+url: 'http://127.0.0.1:3000/csv',
+method: 'POST',
+data: {data:t}
+})}
+
+let up=(upload)=>{
+let reader = new FileReader()
+reader.addEventListener('load', (event) => {
+    document.getElementById('text1').value=event.target.result;
+})
+reader.readAsText(upload.files[0])
+}
+
+function down(){
+$.ajax({
+url: 'http://127.0.0.1:3000/csv',
+method: 'get',
+data: {data:one}
+})}

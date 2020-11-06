@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CSV converter</title>
 <link rel="stylesheet" type="text/css" href="./css.css">
-<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
     <p style="color:yellow">Convert JSON to CSV</p>
-    <form action="/csv", method="post">
+    <form action="/up", method="post">
     <input id='file' type="file" onchange="up(this)"><p id='up'>Upload File</p> 
     </form>
     <br>
@@ -66,7 +63,7 @@
           ]
         }'></textarea>
         <br>
-        <button type="submit" onclick="convert()">Convert & Submit</button>
+        <button type="submit" onclick="convert(event)">Convert & Submit</button>
     </form>
     <br>
     <textarea id="text2" name="csv" placeholder="Result 
@@ -78,10 +75,10 @@
         Beth,Johnson,San Francisco,San Francisco,Broker/Sales Person,7500000
     " readonly></textarea>
     <br>
-    <form action="/csv" method="get">
-        <button type="submit" href="app.js" download>Download Result</button>
-      </form>
+    <a style="text-decoration:none" href="/csv" download>
+    <form action="/csv", method="get"></form>
+    <button type="submit" onclick="down()">Download Result</button>
+    </a>
 <script src="app.js"></script>
-<script src="up.js"></script>
 </body>
 </html>
